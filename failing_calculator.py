@@ -1,14 +1,12 @@
 def divide_list(lst, divisor):
-    result = []
-    for item in lst:
-        result.append(item / divisor)
-    return result
+    if divisor == 0:
+        return "Error: Division by zero"
+    return [item / divisor for item in lst]
 
 def calculate_average(numbers):
-    total = 0
-    for n in numbers:
-        total = total + n
-    return total / len(numbers)
+    if not numbers:
+        return 0
+    return sum(numbers) / len(numbers)
 
 def main():
     print(divide_list([10, 5, 0], 0))

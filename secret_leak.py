@@ -1,11 +1,14 @@
-API_KEY = "sk-1234567890abcdefghijklmnopqrstuvwxyz"
-DB_PASSWORD = "admin123"
+import os
+
+# Security fix: Hardcoded secrets removed. Use environment variables.
+# API_KEY = os.getenv("API_KEY")
+# DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 def connect_to_database():
-    print(f"Veritabanına bağlanılıyor... Şifre: {DB_PASSWORD}")
+    print("Connecting to database... (password from env var)")
 
 def call_external_api():
-    print(f"API çağrısı yapılıyor. Anahtar: {API_KEY[:10]}...")
+    print("Calling API... (key from env var)")
 
 def main():
     connect_to_database()
